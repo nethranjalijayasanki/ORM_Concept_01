@@ -33,17 +33,18 @@ public class Main {
         employee.setTel("0742581225");
 
         Transaction transaction = session.beginTransaction();
-
+//      call customer
         session.save(customer);
         session.update(customer);
         session.delete(customer);
-        session.get();
+        session.get(String.valueOf(customer),customer);
         transaction.commit();
 
+//      call employee
         session.save(employee);
         session.update(employee);
         session.delete(employee);
-        session.get();
+        session.get(String.valueOf(employee),employee);
         transaction.commit();
 
         session.close();
