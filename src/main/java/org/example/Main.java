@@ -37,7 +37,7 @@ public class Main {
         session.save(customer);
         session.update(customer);
         session.delete(customer);
-        session.get(String.valueOf(customer),customer);
+        Customer customer1 = session.get(Customer.class, 1);
         transaction.commit();
 
 //      call employee
